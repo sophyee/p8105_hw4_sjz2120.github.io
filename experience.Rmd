@@ -5,3 +5,13 @@ output:
     toc: true
     toc_float: true
 ---
+
+### My Background
+
+
+
+
+
+### Resume
+
+![](https://drive.google.com/file/d/1b2QSKWLYn_KWABWQyGyd8sXSLuAwS2Tp/view?usp=sharing)
