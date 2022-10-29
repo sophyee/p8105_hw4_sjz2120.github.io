@@ -14,4 +14,5 @@ output:
 
 ### Resume
 
-![](https://drive.google.com/file/d/1b2QSKWLYn_KWABWQyGyd8sXSLuAwS2Tp/view?usp=sharing)
+<embed src="https://drive.google.com/file/d/1b2QSKWLYn_KWABWQyGyd8sXSLuAwS2Tp/view?usp=sharing" width="500" height="375" 
+ type="application/pdf">
