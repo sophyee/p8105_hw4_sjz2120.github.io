@@ -5,3 +5,22 @@ output:
     toc: true
     toc_float: true
 ---
+
+### Hello! :)
+
+Hi! I'm Sophie Zhang (they/them) and I'm currently a second-year MPH student in Epidemiology with a certificate in Biostatistics at Columbia Mailman School of Public Health. I'm an avid baker and fall-weather enthusiast, and am excited to support the communities I'm a part of as someone in public health!
+
+![*A recent photo of me, which I can't figure out how to make smaller*](images/sophie_img.jpg)
+
+<br />
+
+
+Here's a direct link if you'd like to learn more about [my background and experience](experience.html). You can also navigate to this page using the `Experience` tab at the top.
+
+For this assignment, I've also created a [a flexdashboard](flexdashboard.html) that you can use to interactively explore data from `Instacart`. You can also navigate to this page using the `flexdashboard` tab at the top.
+
+<br />
+
+### About this site
+
+I created this website for [P8105: Data Science I](https://p8105.com/), a class that I'm currently taking. This specific site was created for Homework 4, and hopefully I'll make an updated personal website in the future!

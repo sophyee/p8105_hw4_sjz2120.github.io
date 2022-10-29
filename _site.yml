@@ -3,7 +3,7 @@ output_dir: "."
 navbar:
   title: "Home"
   right:
-    - text: "Experience"
+    - text: "My Experience"
       href: experience.html
     - text: "Flexdashboard"
       href: flexdashboard.html
