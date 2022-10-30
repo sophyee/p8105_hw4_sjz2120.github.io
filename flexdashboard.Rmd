@@ -49,10 +49,11 @@ rest_inspec =
   select(
     camis, boro, critical_flag, cuisine_description, inspection_date, inspection_type, score, violation_code, grade) %>%
   filter(
+    score >= 0,
     inspection_type == "Cycle Inspection / Re-inspection",
     grade != "Not Yet Graded",
+    grade != "Z",
     critical_flag != "Not Applicable",
-    boro == "MANHATTAN",
     inspection_date >= "2016-01-01",
     inspection_date <= "2016-12-31"
   ) %>%
@@ -68,8 +69,17 @@ ___
 
 ### Let's Explore! Flexdashboard
 
-```{r}
-
+```{r boxplot, results="hide"}
+rest_inspec %>%
+  mutate(
+    score_label = str_c("Score: ", score),
+    boro = fct_reorder(boro, score)
+  ) %>%
+  plot_ly(
+    x = ~boro, y = ~score, color = ~boro,
+    type = "box", mode = "markers",
+    alpha = 0.5, text = ~score_label
+  )
 ```
 
 
