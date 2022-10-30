@@ -368,8 +368,8 @@ div.tocify {
 </div>
 
 
-<div id="nyc-restaurant-inspection-results" class="section level3">
-<h3>NYC Restaurant Inspection Results</h3>
+<div id="nyc-restaurant-inspections" class="section level3">
+<h3>NYC Restaurant Inspections</h3>
 <p>The New York City Department of Health and Mental Hygiene (NYC DOHMH)
 conducts unannounced restaurant inspections on an annual basis in order
 to check for compliance with policies on food handling, food
@@ -397,12 +397,10 @@ sheet</a> developed by the NYC DOHMH.</p>
 <p><em>NYC restaurant inspection data are publicly available at <a
 href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j">NYC
 Open Data</a> and are updated daily.</em></p>
+<hr />
 </div>
-<div
-id="lets-explore-some-of-the-data-on-nyc-restaurant-health-code-violations"
-class="section level3">
-<h3>Let’s explore some of the data on NYC restaurant health code
-violations</h3>
+<div id="flexdashboard-context" class="section level3">
+<h3>Flexdashboard context</h3>
 <p>For the following flexdashboard, we’ll be using a subset of NYC
 restaurant inspection data accessed in October 2017 and compiled into
 the <code>p8105.datasets</code> package for this class. This dataset
@@ -411,30 +409,39 @@ name and location, type of food, inspection date, and details on
 violation codes, total scores, and associated grades. The data is also
 longitudinal in nature, with multiple rows per restaurant representing
 inspections over time.</p>
-<p>You can find more information on how this specific raw dataset was
-obtained <a
-href="https://p8105.com/dataset_restaurant_inspections.html">here</a>.</p>
+<p><em>You can find more information on how this specific raw dataset
+was obtained <a
+href="https://p8105.com/dataset_restaurant_inspections.html">here</a>.</em></p>
+<hr />
+<p>In this flexdashboard, we’ll be looking at restaurant inspection
+scores and dates in the year 2016 for restaurants in Manhattan.</p>
 <pre class="r"><code>data(&quot;rest_inspec&quot;)
 
-rest_inspec</code></pre>
-<pre><code>## # A tibble: 397,584 × 18
-##    action boro  build…¹  camis criti…² cuisi…³ dba   inspection_date     inspe…⁴
-##    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;dttm&gt;              &lt;chr&gt;  
-##  1 Viola… MANH… 425     4.15e7 Not Cr… Italian SPIN… 2016-10-05 00:00:00 Cycle …
-##  2 Viola… MANH… 37      4.12e7 Critic… Korean  SHIL… 2015-07-17 00:00:00 Cycle …
-##  3 Viola… MANH… 15      4.11e7 Not Cr… CafÃ©/… CITY… 2017-03-06 00:00:00 Admini…
-##  4 Viola… MANH… 35      4.13e7 Critic… Korean  MADA… 2015-01-29 00:00:00 Cycle …
-##  5 Viola… MANH… 1271    5.00e7 Critic… Americ… THE … 2014-11-13 00:00:00 Pre-pe…
-##  6 Viola… MANH… 155     5.00e7 Not Cr… Donuts  DUNK… 2016-11-28 00:00:00 Cycle …
-##  7 Viola… MANH… 1164    5.00e7 Critic… Salads  SWEE… 2015-03-12 00:00:00 Cycle …
-##  8 Viola… MANH… 37      4.12e7 Not Cr… Korean  SHIL… 2016-01-22 00:00:00 Cycle …
-##  9 Viola… MANH… 299     5.01e7 Not Cr… Americ… PRET… 2017-08-28 00:00:00 Calori…
-## 10 Viola… MANH… 53      4.04e7 Not Cr… Korean  HAN … 2016-05-10 00:00:00 Cycle …
-## # … with 397,574 more rows, 9 more variables: phone &lt;chr&gt;, record_date &lt;dttm&gt;,
-## #   score &lt;int&gt;, street &lt;chr&gt;, violation_code &lt;chr&gt;,
-## #   violation_description &lt;chr&gt;, zipcode &lt;int&gt;, grade &lt;chr&gt;, grade_date &lt;dttm&gt;,
-## #   and abbreviated variable names ¹​building, ²​critical_flag,
-## #   ³​cuisine_description, ⁴​inspection_type</code></pre>
+rest_inspec =
+  rest_inspec %&gt;%
+  select(
+    camis, boro, critical_flag, cuisine_description, inspection_date, inspection_type, score, violation_code, grade) %&gt;%
+  filter(
+    inspection_type == &quot;Cycle Inspection / Re-inspection&quot;,
+    grade != &quot;Not Yet Graded&quot;,
+    critical_flag != &quot;Not Applicable&quot;,
+    boro == &quot;MANHATTAN&quot;,
+    inspection_date &gt;= &quot;2016-01-01&quot;,
+    inspection_date &lt;= &quot;2016-12-31&quot;
+  ) %&gt;%
+  drop_na()</code></pre>
+<p>There are 10666 restaurant inspection observations in the subsetted
+dataset we’ll be using for the Flexdashboard, with <em>Cycle Inspection:
+Re-inspection</em> data from 3347 unique restaurants in Manhattan
+throughout 2016.</p>
+<p><em>For more information on how this dataset was cleaned and coded to
+use in the Flexdashboard, see the <code>flexdashboard</code> file in my
+<a href="https://github.com/sophyee/sophyee.github.io.git">GitHub
+repository</a>.</em></p>
+<hr />
+</div>
+<div id="lets-explore" class="section level3">
+<h3>Let’s Explore!</h3>
 </div>
 
 

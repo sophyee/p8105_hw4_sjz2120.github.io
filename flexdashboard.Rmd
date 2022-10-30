@@ -31,7 +31,7 @@ Additional points can then be assigned based on the severity of the violation, r
 
 ___
 
-### Flexdashboard context
+### Context
 
 For the following flexdashboard, we'll be using a subset of NYC restaurant inspection data accessed in October 2017 and compiled into the `p8105.datasets` package for this class. This dataset contains ~400,000 rows and 26 columns, with information on restaurant name and location, type of food, inspection date, and details on violation codes, total scores, and associated grades. The data is also longitudinal in nature, with multiple rows per restaurant representing inspections over time. 
 
@@ -40,8 +40,6 @@ For the following flexdashboard, we'll be using a subset of NYC restaurant inspe
 ___
 
 In this flexdashboard, we'll be looking at restaurant inspection scores and dates in the year 2016 for restaurants in Manhattan.
-
-*For more information on how this dataset was cleaned and coded to use in the Flexdashboard, see the `flexdashboard` file in my [GitHub repository](https://github.com/sophyee/sophyee.github.io.git).*
 
 ```{r Loading-in-dataset}
 data("rest_inspec")
@@ -61,7 +59,14 @@ rest_inspec =
   drop_na()
 ```
 
-### Let's Explore!
+There are `r nrow(rest_inspec)` restaurant inspection observations in the subsetted dataset we'll be using for the Flexdashboard, with 
+*Cycle Inspection: Re-inspection* data from `r rest_inspec %>% pull(camis) %>% n_distinct()` unique restaurants in Manhattan throughout 2016.
+
+*For more information on how this dataset was cleaned and coded to use in the Flexdashboard, see the `flexdashboard` file in my [GitHub repository](https://github.com/sophyee/sophyee.github.io.git).*
+
+___
+
+### Let's Explore! Flexdashboard
 
 ```{r}
 
