@@ -14,4 +14,8 @@ output:
 
 ### Resume
 
+Here's a link to the `pdf` version of [my current resume](https://drive.google.com/file/d/1b2QSKWLYn_KWABWQyGyd8sXSLuAwS2Tp/view?usp=share_link).
+
+
 <img src="images/resume_fall_2022_website.jpg" style="width:70%">
+

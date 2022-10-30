@@ -15,7 +15,13 @@ Hi! I'm Sophie Zhang (they/them) and I'm currently a second-year MPH student in 
 <br />
 
 <center>
-<img src="images/sophie_img.jpg" style="width:50%">
+<img src="images/sophie_img.jpg" style="width:30%">
+<img src="images/apple_pie.jpg" style="width:30%">
+<img src="images/orange_cake.jpg" style="width:30%">
+
+<img src="images/pumpkin_cake.jpg" style="width:30%">
+<img src="images/sesame_bun.jpg" style="width:30%">
+<img src="images/cinnamon_rolls.jpg" style="width:30%">
 </center>
 
 <br />
