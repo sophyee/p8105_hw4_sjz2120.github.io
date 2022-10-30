@@ -7,7 +7,7 @@ output:
 ---
 <br />
 
-<h2 align="center"> Background </h2>
+## Background
 
 I am currently a second-year Master of Public Health student in Epidemiology at Columbia University pursuing a certificate in Applied Biostatistics and Public Health Data Science, with a broad background in biostatistics, quantitative & qualitative analysis, and resource coordination. My research and work experience spans a wide range of areas as well, including: basic needs and food systems, LGBTQ+ health & wellness, global health and social medicine frameworks, and injury & violence prevention. 
 
