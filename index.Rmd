@@ -14,7 +14,7 @@ Hi! I'm Sophie Zhang (they/them) and I'm currently a second-year MPH student in 
 
 I'm originally from Massachusetts and went to undergrad in the Bay Area, and now I'm back in the Northeast for the forseeable future. I'm also an avid baker, cat lover, and fall-weather enthusiast; and I am excited to give back to the communities I'm a part of through public health research!
 
-Below are pictures of some of the bakes I've attempted in the past year:
+Below are pictures of some of the bakes I've attempted in the past year:)
 
 <br />
 
@@ -35,13 +35,13 @@ Here's a direct link if you'd like to learn more about [my background and experi
 
 I've also created a [a flexdashboard](flexdashboard.html) that you can use to interactively explore data from `Instacart`. You can navigate to this page using the `flexdashboard` tab at the top.
 
-<br />
+___
 
 ### About this site
 
 I created this website for [P8105: Data Science I](https://p8105.com/), a class that I'm currently taking. This specific site was created for Homework 4, and hopefully I'll make an updated personal website in the future!
 
-<br />
+___
 
 ### Contact Information
 
