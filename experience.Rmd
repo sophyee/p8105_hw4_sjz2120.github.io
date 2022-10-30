@@ -8,14 +8,83 @@ output:
 
 ### My Background
 
+I’m currently a second-year Master of Public Health student in Epidemiology at Columbia University pursuing a certificate in Applied Biostatistics and Public Health Data Science, with a broad background in biostatistics, quantitative & qualitative analysis, and resource coordination. My research and work experience spans a wide range of areas as well, including: basic needs and food systems, LGBTQ+ health & wellness, global health and social medicine frameworks, and injury & violence prevention. 
 
-
+I'm particularly passionate about research to inform policy and advocacy, particularly those elucidating the health and well-being of transgender and non-binary folks and how they play out along the intersections of race/ethnicity. 
 
 
 ### Resume
 
-Here's a link to the `pdf` version of [my current resume](https://drive.google.com/file/d/1b2QSKWLYn_KWABWQyGyd8sXSLuAwS2Tp/view?usp=share_link).
+*Here's a link to the `pdf` version of [my current resume](https://drive.google.com/file/d/1b2QSKWLYn_KWABWQyGyd8sXSLuAwS2Tp/view?usp=share_link).*
+
+# Sophie Zhang
+
+- <sjz2120@cumc.columbia.edu>
+- (978) 809-2258
+- New York, NY
 
 
-<img src="images/resume_fall_2022_website.jpg" style="width:70%">
+## Education
+
+### <span>Columbia University Mailman School of Public Health, MPH Epidemiology</span> <span>Expected May 2023</span>
+
+  - *Concentration:* Applied Biostatistics and Public Health Data Science
+  - *Cumulative GPA:* 4.12/4.00
+  - *Coursework:* Applied Regression, Spatial Epidemiology, Emerging Infectious Diseases, Data Science I
+ 
+### <span>University of California, Berkeley, BA in Public Health</span> <span>Graduated May 2021</span>
+
+  
+## Skills
+
+ - Technical: SAS, R, Python, ArcGIS, Tableau, MS Office, Google Suite
+ - Languages: Fluent in English, Mandarin; Intermediate in French
+ 
+
+## Research and Data Analysis Experience
+
+### <span>Health Research Training Program Intern, NYC Department of Health and Mental Hygiene</span> <span>June 2022 -- Present</span>
+
+ - Analyze complex survey data from the NYC Youth Risk Behavior Survey using SAS-callable SUDAAN for an upcoming report on firearm violence in New York City, to be presented to citywide departments and local policymakers
+ - Conduct literature review using Pubmed and Law Atlas investigating mental health issues in New York City for an upcoming Department of Health special publication
+ - Prepared 50+ variables using SAS to update Community Health Survey data for the EpiQuery online data visualization tool
+ - Co-wrote and submitted a project proposal to the Health Commissioner’s Office for a special report on mental health in NYC
+ - Conducted 15+ MPV case interviews weekly and assisted with contact tracing by maintaining a database of case information
+
+### <span>UC Berkeley Undergraduate Research Apprentice, Examining Global Health Frameworks</span> <span> Jan 2020 -- Jan 2021</span>
+
+ - Conducted & transcribed in-depth interviews about the experiences of individuals in the Social Medicine Consortium under the guidance of MD/MPH candidate Elyse Katz
+ - Systematically analyzed interview transcripts using qualitative coding techniques and NVivo, to better understand the impacts of a social medicine approach on global health initiatives
+
+
+## Professional Experience
+
+### <span>Quantitative Academic Specialist, Columbia University Mailman School of Public Health/span> <span>Aug 2022 -- Present</span>
+
+ - Provide statistical and epidemiological tutoring alongside technical support in SAS, R, and Python to Master’s students from a broad range of backgrounds
+ - Advise graduate students on time management, study skills, and balancing academic and professional work
+
+### <span>Basic Needs Coordinator, UC Berkeley Basic Needs Center/span> <span>May 2020 -- June 2021</span>
+
+ - Developed and further integrated basic needs wraparound social services & day-to-day operations used by 15,000+ students
+ - Coordinated weekly basic needs drop-in hours with 12+ community partners, improving service utilization by +200%
+ - Co-facilitated biweekly Basic Needs Coalition meetings, collaborating with 20+ campus departments on basic needs efforts
+
+### <span>Finance Coordinator, Queer Alliance Resource Center/span> <span>Aug 2018 -- June 2021</span>
+
+ - Managed a budget of $70,000+ for QARC and financially advised its 20+ affiliate LGBTQ+ organizations
+ - Wrote grant proposals and reports, securing $18,000+ in new funding for the 2020-2021 academic year
+ - Executed semesterly events such as HIV/HepC Testing on campus to promote health & wellness for LGBTQ+ students
+
+## Leadership & Volunteer Work
+
+### <span>Undergraduate Representative, University Health Services (UHS) Trans Leadership Team</span> <span>Sep 2020 -- June 2021</span>
+
+ - Served as the first liaison between UHS providers & administration and 500+ transgender/gender-diverse students on campus
+ - Collaborated with lead pharmacist & health insurance representatives on a project to successfully expand the range of
+gender-affirming operations & resources covered by university health insurance
+ 
+### <span>Caseworker, Suitcase Clinic/span> <span>Feb 2020 -- May 2021</span>
+
+ - Ran weekly outreach at a Youth/LGBTQ+ Clinic, advocating for youth experiencing homelessness in Berkeley and connecting 5 clients to housing, employment, and public benefits
 
