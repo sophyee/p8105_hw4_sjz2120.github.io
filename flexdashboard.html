@@ -368,7 +368,74 @@ div.tocify {
 </div>
 
 
-<p>YEEHAW</p>
+<div id="nyc-restaurant-inspection-results" class="section level3">
+<h3>NYC Restaurant Inspection Results</h3>
+<p>The New York City Department of Health and Mental Hygiene (NYC DOHMH)
+conducts unannounced restaurant inspections on an annual basis in order
+to check for compliance with policies on food handling, food
+temperature, personal hygiene of restaurant workers, and vermin control.
+Regulation violations are each worth a number of points, which are
+totaled at the end of the inspection. Scores are converted into grades,
+where a lower score (ie. less regulation violations) earns a higher
+grade.</p>
+<p>Each regulation violation falls into one of three categories:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>A public health hazard</strong>: For instance, failing to
+store food at an appropriate temperature, results in a minimum score of
+7</p></li>
+<li><p><strong>A critical violation</strong>: For example, improperly
+washing raw vegetables prior to serving, results in a minimum score of
+5</p></li>
+<li><p><strong>A general violation</strong>: For instance, improperly
+sanitizing cookware, results in a minimum score of 2</p></li>
+</ol>
+<p>Additional points can then be assigned based on the severity of the
+violation, ranging from 1-5, at the discretion of the inspector. For
+more details, refer to this <a
+href="https://www1.nyc.gov/assets/doh/downloads/pdf/rii/how-we-score-grade.pdf">information
+sheet</a> developed by the NYC DOHMH.</p>
+<p><em>NYC restaurant inspection data are publicly available at <a
+href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j">NYC
+Open Data</a> and are updated daily.</em></p>
+</div>
+<div
+id="lets-explore-some-of-the-data-on-nyc-restaurant-health-code-violations"
+class="section level3">
+<h3>Let’s explore some of the data on NYC restaurant health code
+violations</h3>
+<p>For the following flexdashboard, we’ll be using a subset of NYC
+restaurant inspection data accessed in October 2017 and compiled into
+the <code>p8105.datasets</code> package for this class. This dataset
+contains ~400,000 rows and 26 columns, with information on restaurant
+name and location, type of food, inspection date, and details on
+violation codes, total scores, and associated grades. The data is also
+longitudinal in nature, with multiple rows per restaurant representing
+inspections over time.</p>
+<p>You can find more information on how this specific raw dataset was
+obtained <a
+href="https://p8105.com/dataset_restaurant_inspections.html">here</a>.</p>
+<pre class="r"><code>data(&quot;rest_inspec&quot;)
+
+rest_inspec</code></pre>
+<pre><code>## # A tibble: 397,584 × 18
+##    action boro  build…¹  camis criti…² cuisi…³ dba   inspection_date     inspe…⁴
+##    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;dttm&gt;              &lt;chr&gt;  
+##  1 Viola… MANH… 425     4.15e7 Not Cr… Italian SPIN… 2016-10-05 00:00:00 Cycle …
+##  2 Viola… MANH… 37      4.12e7 Critic… Korean  SHIL… 2015-07-17 00:00:00 Cycle …
+##  3 Viola… MANH… 15      4.11e7 Not Cr… CafÃ©/… CITY… 2017-03-06 00:00:00 Admini…
+##  4 Viola… MANH… 35      4.13e7 Critic… Korean  MADA… 2015-01-29 00:00:00 Cycle …
+##  5 Viola… MANH… 1271    5.00e7 Critic… Americ… THE … 2014-11-13 00:00:00 Pre-pe…
+##  6 Viola… MANH… 155     5.00e7 Not Cr… Donuts  DUNK… 2016-11-28 00:00:00 Cycle …
+##  7 Viola… MANH… 1164    5.00e7 Critic… Salads  SWEE… 2015-03-12 00:00:00 Cycle …
+##  8 Viola… MANH… 37      4.12e7 Not Cr… Korean  SHIL… 2016-01-22 00:00:00 Cycle …
+##  9 Viola… MANH… 299     5.01e7 Not Cr… Americ… PRET… 2017-08-28 00:00:00 Calori…
+## 10 Viola… MANH… 53      4.04e7 Not Cr… Korean  HAN … 2016-05-10 00:00:00 Cycle …
+## # … with 397,574 more rows, 9 more variables: phone &lt;chr&gt;, record_date &lt;dttm&gt;,
+## #   score &lt;int&gt;, street &lt;chr&gt;, violation_code &lt;chr&gt;,
+## #   violation_description &lt;chr&gt;, zipcode &lt;int&gt;, grade &lt;chr&gt;, grade_date &lt;dttm&gt;,
+## #   and abbreviated variable names ¹​building, ²​critical_flag,
+## #   ³​cuisine_description, ⁴​inspection_type</code></pre>
+</div>
 
 
 

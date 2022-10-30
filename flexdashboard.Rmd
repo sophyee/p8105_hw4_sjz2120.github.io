@@ -13,8 +13,34 @@ library(p8105.datasets)
 library(plotly)
 ```
 
-```{r Loading-in-dataset}
+### NYC Restaurant Inspections
 
+The New York City Department of Health and Mental Hygiene (NYC DOHMH) conducts unannounced restaurant inspections on an annual basis in order to check for compliance with policies on food handling, food temperature, personal hygiene of restaurant workers, and vermin control. Regulation violations are each worth a number of points, which are totaled at the end of the inspection. Scores are converted into grades, where a lower score (ie. less regulation violations) earns a higher grade.
+
+Each regulation violation falls into one of three categories:
+
+1. **A public health hazard**: For instance, failing to store food at an appropriate temperature, results in a minimum score of 7
+
+2. **A critical violation**: For example, improperly washing raw vegetables prior to serving, results in a minimum score of 5
+
+3. **A general violation**: For instance, improperly sanitizing cookware, results in a minimum score of 2
+
+Additional points can then be assigned based on the severity of the violation, ranging from 1-5, at the discretion of the inspector. For more details, refer to this [information sheet](https://www1.nyc.gov/assets/doh/downloads/pdf/rii/how-we-score-grade.pdf) developed by the NYC DOHMH.
+
+*NYC restaurant inspection data are publicly available at [NYC Open Data](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j) and are updated daily.*
+
+### Flexdashboard context
+
+For the following flexdashboard, we'll be using a subset of NYC restaurant inspection data accessed in October 2017 and compiled into the `p8105.datasets` package for this class. This dataset contains ~400,000 rows and 26 columns, with information on restaurant name and location, type of food, inspection date, and details on violation codes, total scores, and associated grades. The data is also longitudinal in nature, with multiple rows per restaurant representing inspections over time. 
+
+You can find more information on how this specific raw dataset was obtained [here](https://p8105.com/dataset_restaurant_inspections.html).
+
+
+```{r Loading-in-dataset}
+data("rest_inspec")
+
+rest_inspec
 ```
 
-YEEHAW
+### Let's Explore!
+

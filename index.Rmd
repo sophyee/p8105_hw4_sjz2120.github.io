@@ -31,7 +31,7 @@ Below are pictures of some of the bakes I've attempted in the past year:)
 <br />
 
 
-Here's a direct link if you'd like to learn more about [my background and experience](experience.html). You can also navigate to this page using the `Experience` tab at the top.
+Here's a direct link if you'd like to learn more about [my background and experience](experience.html). You can also navigate to this page using the `My Experience` tab at the top.
 
 I've also created a [a flexdashboard](flexdashboard.html) that you can use to interactively explore data from `Instacart`. You can navigate to this page using the `flexdashboard` tab at the top.
 
