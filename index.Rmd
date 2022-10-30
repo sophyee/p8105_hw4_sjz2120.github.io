@@ -39,7 +39,7 @@ ___
 
 ### About this site
 
-I created this website for [P8105: Data Science I](https://p8105.com/), a class that I'm currently taking. This specific site was created for Homework 4, and hopefully I'll make an updated personal website in the future!
+I created this website for [P8105: Data Science I](https://p8105.com/), a class that I'm currently taking. This specific site was created for Homework 4, and hopefully I'll continue updating this personal website in the future!
 
 ___
 

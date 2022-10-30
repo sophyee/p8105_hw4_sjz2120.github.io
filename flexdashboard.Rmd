@@ -1,5 +1,5 @@
 ---
-title: "Flexdashboard"
+title: "Dashboard Context"
 output: 
   html_document:
     toc: true
@@ -31,7 +31,7 @@ Additional points can then be assigned based on the severity of the violation, r
 
 ___
 
-### Context
+### Dashboard Context
 
 For the following flexdashboard, we'll be using a subset of NYC restaurant inspection data accessed in October 2017 and compiled into the `p8105.datasets` package for this class. This dataset contains ~400,000 rows and 26 columns, with information on restaurant name and location, type of food, inspection date, and details on violation codes, total scores, and associated grades. The data is also longitudinal in nature, with multiple rows per restaurant representing inspections over time. 
 
@@ -39,7 +39,7 @@ For the following flexdashboard, we'll be using a subset of NYC restaurant inspe
 
 ___
 
-In this flexdashboard, we'll be looking at restaurant inspection scores and dates in the year 2016 for restaurants in Manhattan.
+In this flexdashboard, we'll be looking at restaurant inspection scores and dates in the year 2016 for restaurants in NYC.
 
 ```{r Loading-in-dataset}
 data("rest_inspec")
@@ -47,7 +47,11 @@ data("rest_inspec")
 rest_inspec =
   rest_inspec %>%
   select(
-    camis, boro, critical_flag, cuisine_description, inspection_date, inspection_type, score, violation_code, grade) %>%
+    camis, boro, critical_flag, cuisine_description, inspection_date, inspection_type, score, grade) %>%
+  mutate(year = lubridate::year(inspection_date),
+         month = lubridate::month(inspection_date, label = TRUE, abbr = FALSE),
+         day = lubridate::day(inspection_date),
+         cuisine_description = recode(cuisine_description, "Latin (Cuban, Dominican, Puerto Rican, South & Central American)" = "Latin", "CafÃ©/Coffee/Tea" = "Cafe", "Bottled beverages, including water, sodas, juices, etc." = "Bottled Beverages", "Juice, Smoothies, Fruit Salads" = "Juice and Smoothies")) %>%
   filter(
     score >= 0,
     inspection_type == "Cycle Inspection / Re-inspection",
@@ -58,18 +62,22 @@ rest_inspec =
     inspection_date <= "2016-12-31"
   ) %>%
   drop_na()
+
+rest_inspec
 ```
 
 There are `r nrow(rest_inspec)` restaurant inspection observations in the subsetted dataset we'll be using for the Flexdashboard, with 
-*Cycle Inspection: Re-inspection* data from `r rest_inspec %>% pull(camis) %>% n_distinct()` unique restaurants in Manhattan throughout 2016.
+*Cycle Inspection: Re-inspection* data from `r rest_inspec %>% pull(camis) %>% n_distinct()` unique restaurants in NYC throughout 2016.
 
 *For more information on how this dataset was cleaned and coded to use in the Flexdashboard, see the `flexdashboard` file in my [GitHub repository](https://github.com/sophyee/sophyee.github.io.git).*
 
 ___
 
-### Let's Explore! Flexdashboard
+### Let's Explore!
 
-```{r boxplot, results="hide"}
+Click on the `Dashboard` tab at the top of this page to open up an interactive dashboard.
+
+```{r boxplot}
 rest_inspec %>%
   mutate(
     score_label = str_c("Score: ", score),
@@ -77,11 +85,39 @@ rest_inspec %>%
   ) %>%
   plot_ly(
     x = ~boro, y = ~score, color = ~boro,
-    type = "box", mode = "markers",
-    alpha = 0.5, text = ~score_label
-  )
+    type = "box", mode = "markers", colors = "viridis",
+    alpha = 0.3, text = ~score_label) %>%
+    layout(title = 'Restaurant Inspection Score Distributions in 2016, by Borough', 
+    xaxis = list(title = "Borough"), yaxis = list(title = "Inspection Score"))
 ```
 
+```{r barchart}
+rest_inspec %>%
+  group_by(cuisine_description) %>%
+  summarise(cuisine_type = mean(score),
+            cuisine_avg_score = str_c("Average Score: ", cuisine_type)) %>%
+  mutate(cuisine_description = fct_reorder(cuisine_description, cuisine_avg_score)) %>%
+  plot_ly(
+    x = ~cuisine_description, y = ~cuisine_type,
+    type = "bar", mode = "markers", colors = "viridis",
+    alpha = 0.5, text = ~cuisine_avg_score)  %>%
+    layout(title = 'Average NYC Restaurant Inspection Score by Cuisine Type in 2016', 
+    xaxis = list(title = "Cuisine Type"), yaxis = list(title = "Avg Inspection Score"))
+```
 
+```{r timeplot}
+rest_inspec %>%
+  mutate(
+    score_label = str_c("Score: ", score),
+    boro = fct_reorder(boro, score)
+  ) %>%
+  plot_ly(
+    x = ~boro, y = ~score, color = ~boro,
+    type = "box", mode = "markers", colors = "viridis",
+    alpha = 0.3, text = ~score_label) %>%
+    layout(title = 'Restaurant Inspection Score Distributions in 2016, by Borough', 
+    xaxis = list(title = "Borough"), yaxis = list(title = "Inspection Score"))
+  
+```
 
 
