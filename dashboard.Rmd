@@ -1,0 +1,94 @@
+---
+title: "Restaurant Inspections Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(p8105.datasets)
+library(flexdashboard)
+library(plotly)
+```
+
+```{r loading-and-filtering-data, include=FALSE}
+data("rest_inspec")
+
+rest_inspec =
+  rest_inspec %>%
+  select(
+    camis, boro, critical_flag, cuisine_description, inspection_date, inspection_type, score, grade) %>%
+  mutate(year = lubridate::year(inspection_date),
+         month = lubridate::month(inspection_date, label = TRUE, abbr = FALSE),
+         day = lubridate::day(inspection_date),
+         cuisine_description = recode(cuisine_description, "Latin (Cuban, Dominican, Puerto Rican, South & Central American)" = "Latin", "CafÃ©/Coffee/Tea" = "Cafe", "Bottled beverages, including water, sodas, juices, etc." = "Bottled Beverages", "Juice, Smoothies, Fruit Salads" = "Juice and Smoothies")) %>%
+  filter(
+    score >= 0,
+    inspection_type == "Cycle Inspection / Re-inspection",
+    grade != "Not Yet Graded",
+    grade != "Z",
+    cuisine_description != "Not Listed/Not Applicable",
+    critical_flag != "Not Applicable",
+    inspection_date >= "2016-01-01",
+    inspection_date <= "2016-12-31"
+  ) %>%
+  drop_na()
+```
+
+
+Column {data-width=400}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r boxplot}
+rest_inspec %>%
+  mutate(
+    score_label = str_c("Score: ", score),
+    boro = fct_reorder(boro, score)
+  ) %>%
+  plot_ly(
+    x = ~boro, y = ~score, color = ~boro,
+    type = "box", mode = "markers", colors = "viridis",
+    alpha = 0.3, text = ~score_label) %>%
+    layout(title = 'Inspection Score Distributions in 2016, by Borough', 
+    xaxis = list(title = "Borough"), yaxis = list(title = "Inspection Score"))
+```
+
+Column {data-width=600}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r barchart}
+rest_inspec %>%
+  group_by(cuisine_description) %>%
+  summarise(cuisine_type = mean(score),
+            avg_score_label = str_c("Average Score: ", cuisine_type)) %>%
+  mutate(cuisine_description = fct_reorder(cuisine_description, cuisine_type)) %>%
+  plot_ly(
+    x = ~cuisine_description, y = ~cuisine_type,
+    type = "bar", mode = "markers", colors = "viridis",
+    alpha = 0.5, text = ~avg_score_label)  %>%
+    layout(title = 'Average NYC Restaurant Inspection Score by Cuisine Type in 2016', 
+    xaxis = list(title = "Cuisine Type"), yaxis = list(title = "Avg Inspection Score"))
+```
+
+### Chart C
+
+```{r violinplot}
+rest_inspec %>%
+  mutate(
+    score_label = str_c("Score: ", score),
+    boro = fct_reorder(boro, score)
+  ) %>%
+  plot_ly(
+    x = ~boro, y = ~score, color = ~grade,
+    type = "violin", colors = "viridis",
+    alpha = 0.3, text = ~score_label) %>%
+    layout(title = 'Inspection Score Distributions in 2016, by Borough & Grade', 
+    xaxis = list(title = "Borough"), yaxis = list(title = "Inspection Score"), legend = list(title = list(text = "<b> Inspection Grade </b>")))
+```
+

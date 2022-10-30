@@ -103,7 +103,7 @@ rest_inspec %>%
     xaxis = list(title = "Cuisine Type"), yaxis = list(title = "Avg Inspection Score"))
 ```
 
-```{r violinplot}
+```{r violinplot, include=FALSE}
 rest_inspec %>%
   mutate(
     score_label = str_c("Score: ", score),
