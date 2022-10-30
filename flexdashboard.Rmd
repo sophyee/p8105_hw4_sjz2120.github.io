@@ -5,3 +5,16 @@ output:
     toc: true
     toc_float: true
 ---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(p8105.datasets)
+
+library(plotly)
+```
+
+```{r Loading-in-dataset}
+
+```
+
+YEEHAW
