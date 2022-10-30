@@ -9,6 +9,8 @@ navbar:
       href: flexdashboard.html
     - icon: fa-envelope fa-duotone fa-lg
       href: mailto:<sophiejiahuazhang@gmail.com>
+    - icon: fa-brands fa-linkedin
+      href: https://www.linkedin.com/in/sophiejhzhang/
     - icon: fa-github fa-lg
       href: http://github.com/sophyee/
 output:
