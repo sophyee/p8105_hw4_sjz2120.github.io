@@ -29,18 +29,44 @@ Additional points can then be assigned based on the severity of the violation, r
 
 *NYC restaurant inspection data are publicly available at [NYC Open Data](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j) and are updated daily.*
 
+___
+
 ### Flexdashboard context
 
 For the following flexdashboard, we'll be using a subset of NYC restaurant inspection data accessed in October 2017 and compiled into the `p8105.datasets` package for this class. This dataset contains ~400,000 rows and 26 columns, with information on restaurant name and location, type of food, inspection date, and details on violation codes, total scores, and associated grades. The data is also longitudinal in nature, with multiple rows per restaurant representing inspections over time. 
 
-You can find more information on how this specific raw dataset was obtained [here](https://p8105.com/dataset_restaurant_inspections.html).
+*You can find more information on how this specific raw dataset was obtained [here](https://p8105.com/dataset_restaurant_inspections.html).*
 
+___
+
+In this flexdashboard, we'll be looking at restaurant inspection scores and dates in the year 2016 for restaurants in Manhattan.
+
+*For more information on how this dataset was cleaned and coded to use in the Flexdashboard, see the `flexdashboard` file in my [GitHub repository](https://github.com/sophyee/sophyee.github.io.git).*
 
 ```{r Loading-in-dataset}
 data("rest_inspec")
 
-rest_inspec
+rest_inspec =
+  rest_inspec %>%
+  select(
+    camis, boro, critical_flag, cuisine_description, inspection_date, inspection_type, score, violation_code, grade) %>%
+  filter(
+    inspection_type == "Cycle Inspection / Re-inspection",
+    grade != "Not Yet Graded",
+    critical_flag != "Not Applicable",
+    boro == "MANHATTAN",
+    inspection_date >= "2016-01-01",
+    inspection_date <= "2016-12-31"
+  ) %>%
+  drop_na()
 ```
 
 ### Let's Explore!
+
+```{r}
+
+```
+
+
+
 
