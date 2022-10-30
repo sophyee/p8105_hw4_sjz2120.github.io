@@ -1,5 +1,5 @@
 ---
-title: "Restaurant Inspections Dashboard"
+title: "NYC 2016 Restaurant Inspections Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -38,7 +38,7 @@ rest_inspec =
 ```
 
 
-Column {data-width=400}
+Column {data-width=500}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -57,7 +57,7 @@ rest_inspec %>%
     xaxis = list(title = "Borough"), yaxis = list(title = "Inspection Score"))
 ```
 
-Column {data-width=600}
+Column {data-width=500}
 -----------------------------------------------------------------------
 
 ### Chart B
@@ -72,7 +72,7 @@ rest_inspec %>%
     x = ~cuisine_description, y = ~cuisine_type,
     type = "bar", mode = "markers", colors = "viridis",
     alpha = 0.5, text = ~avg_score_label)  %>%
-    layout(title = 'Average NYC Restaurant Inspection Score by Cuisine Type in 2016', 
+    layout(title = 'Average Inspection Scores by Cuisine Type in 2016', 
     xaxis = list(title = "Cuisine Type"), yaxis = list(title = "Avg Inspection Score"))
 ```
 

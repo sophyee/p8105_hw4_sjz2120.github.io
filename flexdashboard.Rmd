@@ -73,7 +73,7 @@ ___
 
 ### Let's Explore!
 
-Click on the `Dashboard` tab at the top of this page to open up an interactive dashboard.
+Click on the `Dashboard` tab at the top of this page to open up an [interactive dashboard](dashboard.html).
 
 ```{r boxplot, include=FALSE}
 rest_inspec %>%

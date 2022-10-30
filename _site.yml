@@ -7,6 +7,8 @@ navbar:
       href: experience.html
     - text: "Dashboard Context"
       href: flexdashboard.html
+    - text: "Dashboard"
+      href: dashboard.html
     - icon: fa-envelope fa-duotone fa-lg
       href: mailto:<sophiejiahuazhang@gmail.com>
     - icon: fa-brands fa-linkedin
