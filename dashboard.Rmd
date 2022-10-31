@@ -38,7 +38,7 @@ rest_inspec =
 ```
 
 
-Column {data-width=500}
+Column {data-width=450}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -57,7 +57,7 @@ rest_inspec %>%
     xaxis = list(title = "Borough"), yaxis = list(title = "Inspection Score"))
 ```
 
-Column {data-width=500}
+Column {data-width=550}
 -----------------------------------------------------------------------
 
 ### Chart B
